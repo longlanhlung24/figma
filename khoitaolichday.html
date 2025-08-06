@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tạo lịch giảng dạy</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f4f6f9;
+      padding: 40px;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .form-group input,
+    .form-group select {
+      padding: 12px 14px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    button {
+      background-color: #00bcd4;
+      color: white;
+      padding: 14px 26px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #0097a7;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📅 Tạo Lịch Giảng Dạy</h2>
+
+  <form>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="subject">Môn học</label>
+        <select id="subject">
+          <option>Chọn môn học</option>
+          <option>Cơ sở dữ liệu</option>
+          <option>Lập trình Python</option>
+          <option>Mạng máy tính</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="class-code">Mã lớp học phần</label>
+        <input type="text" id="class-code" placeholder="VD: LHP123">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="day">Ngày học trong tuần</label>
+        <select id="day">
+          <option>Thứ 2</option>
+          <option>Thứ 3</option>
+          <option>Thứ 4</option>
+          <option>Thứ 5</option>
+          <option>Thứ 6</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="time">Thời gian bắt đầu</label>
+        <input type="time" id="time">
+      </div>
+
+      <div class="form-group">
+        <label for="room">Phòng học</label>
+        <input type="text" id="room" placeholder="VD: A202">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="start-date">Ngày bắt đầu</label>
+        <input type="date" id="start-date">
+      </div>
+
+      <div class="form-group">
+        <label for="end-date">Ngày kết thúc</label>
+        <input type="date" id="end-date">
+      </div>
+    </div>
+
+    <button type="submit">➕ Tạo lịch giảng dạy</button>
+
+  </form>
+
+</body>
+</html>

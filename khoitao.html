@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Khởi tạo buổi điểm danh</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f4f6f9;
+      padding: 40px;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .form-group {
+      flex: 1;
+      min-width: 250px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #555;
+    }
+
+    input, select {
+      padding: 12px 14px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #00bcd4;
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #0097a7;
+    }
+
+    .info {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #777;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📸 Khởi tạo buổi điểm danh</h2>
+
+  <form>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="class">Chọn lớp học phần</label>
+        <select id="class">
+          <option>-- Chọn lớp học phần --</option>
+          <option>LHP101 - Cơ sở dữ liệu</option>
+          <option>LHP202 - Lập trình Web</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Ngày học</label>
+        <input type="date" id="date">
+      </div>
+
+      <div class="form-group">
+        <label for="session">Buổi học</label>
+        <select id="session">
+          <option>-- Chọn buổi học --</option>
+          <option>Buổi 1</option>
+          <option>Buổi 2</option>
+          <option>Buổi 3</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="note">Ghi chú (nếu có)</label>
+      <input type="text" id="note" placeholder="Ví dụ: Kiểm tra đầu kỳ, buổi bù...">
+    </div>
+
+    <button type="submit">🚀 Bắt đầu điểm danh</button>
+
+    <div class="info">
+      Sau khi ấn “Bắt đầu điểm danh”, hệ thống sẽ kích hoạt camera để nhận diện khuôn mặt sinh viên.
+    </div>
+
+  </form>
+
+</body>
+</html>

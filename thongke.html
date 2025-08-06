@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thống kê điểm danh</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f9;
+      padding: 40px;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    .filter-form {
+      background-color: #fff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+      max-width: 950px;
+      margin-inline: auto;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .form-group {
+      flex: 1;
+      min-width: 200px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #555;
+    }
+
+    select, input {
+      padding: 10px 14px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #00bcd4;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 26px;
+      cursor: pointer;
+    }
+
+    .summary {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      margin-bottom: 25px;
+      max-width: 950px;
+      margin-inline: auto;
+    }
+
+    .summary p {
+      font-size: 16px;
+      margin: 6px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      max-width: 950px;
+      margin-inline: auto;
+    }
+
+    th, td {
+      padding: 14px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background-color: #00bcd4;
+      color: white;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .status {
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      display: inline-block;
+    }
+
+    .present { background-color: #e0f7fa; color: #00796b; }
+    .absent { background-color: #ffcdd2; color: #c62828; }
+    .late   { background-color: #fff3e0; color: #ef6c00; }
+  </style>
+</head>
+<body>
+
+  <h2>📊 Thống kê điểm danh theo buổi học</h2>
+
+  <!-- Form chọn lớp & buổi học -->
+  <form class="filter-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="class">Lớp học phần</label>
+        <select id="class">
+          <option>LHP101 - Cơ sở dữ liệu</option>
+          <option>LHP202 - Lập trình Web</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Ngày học</label>
+        <input type="date" id="date">
+      </div>
+
+      <div class="form-group">
+        <label for="session">Buổi học</label>
+        <select id="session">
+          <option>Buổi 1</option>
+          <option>Buổi 2</option>
+          <option>Buổi 3</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <button type="submit">🔍 Xem thống kê</button>
+      </div>
+    </div>
+  </form>
+
+  <!-- Thống kê tổng quan -->
+  <div class="summary">
+    <p><strong>Tổng số sinh viên:</strong> 45</p>
+    <p><strong>Có mặt:</strong> 40</p>
+    <p><strong>Vắng:</strong> 3</p>
+    <p><strong>Đi muộn:</strong> 2</p>
+  </div>
+
+  <!-- Bảng danh sách sinh viên -->
+  <table>
+    <thead>
+      <tr>
+        <th>Mã SV</th>
+        <th>Họ tên</th>
+        <th>Thời gian điểm danh</th>
+        <th>Trạng thái</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>123456</td>
+        <td>Nguyễn Văn A</td>
+        <td>08:05</td>
+        <td><span class="status present">Có mặt</span></td>
+      </tr>
+      <tr>
+        <td>123457</td>
+        <td>Trần Thị B</td>
+        <td>08:25</td>
+        <td><span class="status late">Đi muộn</span></td>
+      </tr>
+      <tr>
+        <td>123458</td>
+        <td>Lê Văn C</td>
+        <td>--</td>
+        <td><span class="status absent">Vắng</span></td>
+      </tr>
+      <!-- Có thể lặp thêm dữ liệu -->
+    </tbody>
+  </table>
+
+</body>
+</html>
